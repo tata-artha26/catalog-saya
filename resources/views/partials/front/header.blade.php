@@ -16,11 +16,8 @@
         <nav class="hidden lg:flex md:flex-grow justify-center">
             <ul class="flex justify-center space-x-4 text-white">
                 <li><a href="{{ route('home') }}" class="hover:text-secondary font-semibold">Home</a></li>
-                <li><a href="#" class="hover:text-secondary font-semibold">Shop</a></li>
-                <li><a href="#" class="hover:text-secondary font-semibold">Product</a></li>
-                <li><a href="#" class="hover:text-secondary font-semibold">Checkout</a></li>
-                <li><a href="#" class="hover:text-secondary font-semibold">About</a></li>
-                <li><a href="{{ route('admin.dashboard') }}" class="hover:text-secondary font-semibold">Admin</a></li>
+                <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-semibold">Produk</a></li>
+                <li><a href="{{ route('kontak') }}" class="hover:text-secondary font-semibold">Kontak</a></li>
             </ul>
         </nav>
 
@@ -40,9 +37,7 @@
 <nav id="mobile-menu" class="mobile-menu hidden flex-col items-center space-y-8 lg:hidden">
     <ul class="w-full">
         <li><a href="{{ route('home') }}" class="hover:text-secondary font-bold block py-2">Home</a></li>
-        <li><a href="#" class="hover:text-secondary font-bold block py-2">Shop</a></li>
-        <li><a href="#" class="hover:text-secondary font-bold block py-2">Product</a></li>
-        <li><a href="#" class="hover:text-secondary font-bold block py-2">Checkout</a></li>
-        <li><a href="#" class="hover:text-secondary font-bold block py-2">About</a></li>
+        <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block py-2">Produk</a></li>
+        <li><a href="{{ route('kontak') }}" class="hover:text-secondary font-bold block py-2">Kontak</a></li>
     </ul>
 </nav>
