@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\BackOffice\AuthController;
+use App\Http\Controllers\BackOffice\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ProdukController;
@@ -15,6 +16,17 @@ Route::prefix('produk')->name('produk.')->group(function () {
     Route::get('/{produk}', [ProdukController::class, 'show'])->whereNumber('produk')->name('show');
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', DashboardController::class)->name('dashboard');
+Route::prefix('back-office')->name('back_office.')->group(function () {
+
+    // Boleh diakses siapa saja
+    Route::get('/login',  [AuthController::class, 'tampilkanForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'proses'])->name('login.proses');
+
+    // Hanya untuk admin yang sudah login
+    Route::middleware('admin')->group(function () {
+
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::post('/logout',   [AuthController::class, 'logout'])->name('logout');
+
+    });
 });

@@ -12,7 +12,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+            $middleware->alias([
+        'admin' => \App\Http\Middleware\PastikanAdmin::class,
+    ]);
+
+    // Tamu yang mencoba masuk area terkunci diantar ke login back office
+    $middleware->redirectGuestsTo(fn () => route('back_office.login'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
