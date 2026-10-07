@@ -22,14 +22,14 @@
 
                 {{-- Menu di bawah ini dibuat pada Pertemuan 4 --}}
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('back_office.kategori.index') }}" class="nav-link">
                         <i class="nav-icon bi bi-tags"></i>
                         <p>Kategori</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('back_office.produk.index') }}" class="nav-link">
                         <i class="nav-icon bi bi-box-seam"></i>
                         <p>Produk</p>
                     </a>
