@@ -4,27 +4,30 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Data\ProdukDummy;
-use Illuminate\View\View;
+use App\Models\Kategori;
+use App\Models\Produk;
 
 class ProdukController extends Controller
 {
-    public function index(): View
+   public function index()
     {
-        return view('produk.index', [
-            'produks' => ProdukDummy::tersedia(),
-        ]);
+        $daftarProduk = Produk::with('kategori')
+                              ->where('status', 'aktif')
+                              ->latest()
+                              ->paginate(12);
+
+        $daftarKategori = Kategori::orderBy('nama_kategori')->get();
+
+        return view('produk.index', compact('daftarProduk', 'daftarKategori'));
     }
 
-    public function show(int $produk): View
+    public function show(Produk $produk)
     {
-        $produk = ProdukDummy::cari($produk);
+        // Produk yang dinonaktifkan tidak boleh dibuka pembeli
+        abort_if($produk->status !== 'aktif', 404);
 
-        abort_unless($produk, 404);
+        $produk->load('kategori');
 
-        return view('produk.show', [
-            'produk' => $produk,
-            'produkLain' => ProdukDummy::selain($produk['id']),
-        ]);
+        return view('produk.show', compact('produk'));
     }
 }
