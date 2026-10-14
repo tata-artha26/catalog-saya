@@ -8,6 +8,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BackOffice\ProdukController as ProdukBackOffice;
 use App\Http\Controllers\BackOffice\KategoriController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BahasaController;
 
 Route::get('/', [HalamanController::class, 'home'])->name('home');
 Route::get('/kontak', [HalamanController::class, 'kontak'])->name('kontak');
@@ -15,6 +16,8 @@ Route::get('/kontak', [HalamanController::class, 'kontak'])->name('kontak');
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');
 // {produk:slug} artinya: carikan produk berdasarkan kolom slug
 Route::get('/produk/{produk:slug}', [ProdukController::class, 'show'])->name('produk.show');
+
+Route::get('/bahasa/{kode}', [BahasaController::class, 'ganti'])->name('bahasa.ganti');
 
 Route::prefix('back-office')->name('back_office.')->group(function () {
 
