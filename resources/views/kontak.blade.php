@@ -7,9 +7,9 @@
     <section id="breadcrumbs" class="pt-6 bg-gray-50">
         <div class="container mx-auto px-4">
             <ol class="list-reset flex">
-                <li><a href="{{ route('home') }}" class="font-semibold hover:text-primary">Home</a></li>
+                <li><a href="{{ route('home') }}" class="font-semibold hover:text-primary">{{__('web.beranda')}}</a></li>
                 <li><span class="mx-2">&gt;</span></li>
-                <li>Kontak</li>
+                <li>{{__('web.kontak')}}</li>
             </ol>
         </div>
     </section>
@@ -30,7 +30,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-1">Alamat</h3>
+                            <h3 class="text-lg font-semibold mb-1">{{__('web.alamat')}}</h3>
                             <p>123 Street Name, Paris, France</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-1">Telepon</h3>
+                            <h3 class="text-lg font-semibold mb-1">{{__('web.telepon')}}</h3>
                             <p class="text-xl font-bold">(123) 456-7890</p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold mb-1">Email</h3>
+                            <h3 class="text-lg font-semibold mb-1">{{__('web.email')}}</h3>
                             <a href="mailto:info@company.com" class="underline">info@company.com</a>
                         </div>
                     </div>
@@ -58,33 +58,32 @@
 
                 <!-- Form -->
                 <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-semibold mb-6">Kirim Pesan</h3>
+                    <h3 class="text-2xl font-semibold mb-6">{{__('web.kirim_pesan')}}</h3>
                     <form class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label for="nama" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                                <label for="nama" class="block text-sm font-medium text-gray-700 mb-1">{{__('web.nama_lengkap')}}</label>
                                 <input type="text" id="nama" name="nama" placeholder="Nama lengkap"
                                     class="w-full px-3 py-2 border border-gray-line rounded-md focus:outline-none focus:ring-primary focus:border-primary">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">{{__('web.email')}}</label>
                                 <input type="email" id="email" name="email" placeholder="email@contoh.com"
                                     class="w-full px-3 py-2 border border-gray-line rounded-md focus:outline-none focus:ring-primary focus:border-primary">
                             </div>
                         </div>
                         <div>
-                            <label for="subjek" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                            <label for="subjek" class="block text-sm font-medium text-gray-700 mb-1">{{__('web.subjek')}}</label>
                             <input type="text" id="subjek" name="subjek" placeholder="Subjek pesan"
                                 class="w-full px-3 py-2 border border-gray-line rounded-md focus:outline-none focus:ring-primary focus:border-primary">
                         </div>
                         <div>
-                            <label for="pesan" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                            <label for="pesan" class="block text-sm font-medium text-gray-700 mb-1">{{__('web.pesan')}}</label>
                             <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..."
                                 class="w-full px-3 py-2 border border-gray-line rounded-md focus:outline-none focus:ring-primary focus:border-primary"></textarea>
                         </div>
                         <button type="submit"
-                            class="bg-primary border border-primary hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-6 rounded-full">Kirim
-                            Pesan</button>
+                            class="bg-primary border border-primary hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-6 rounded-full">{{__('web.kirim_pesan')}}                                         </button>
                     </form>
                 </div>
             </div>

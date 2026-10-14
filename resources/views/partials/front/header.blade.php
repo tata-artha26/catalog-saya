@@ -15,17 +15,18 @@
 
         <nav class="hidden lg:flex md:flex-grow justify-center">
             <ul class="flex justify-center space-x-4 text-white">
-                <li><a href="{{ route('home') }}" class="hover:text-secondary font-semibold">Home</a></li>
-                <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-semibold">Produk</a></li>
-                <li><a href="{{ route('kontak') }}" class="hover:text-secondary font-semibold">Kontak</a></li>
+               <li><a href="{{ route('home') }}" class="hover:text-secondary font-semibold">{{ __('web.beranda') }}</a></li>
+<li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-semibold">{{ __('web.produk') }}</a></li>
+<li><a href="{{ route('kontak') }}" class="hover:text-secondary font-semibold">{{ __('web.kontak') }}</a></li>
             </ul>
         </nav>
 
         <div class="hidden lg:flex items-center space-x-4 relative">
+            @include('partials.pengalih-bahasa')
             <a href="#"
-                class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Register</a>
+                class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">{{ __('web.daftar') }}</a>
             <a href="#"
-                class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">Login</a>
+                class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">{{ __('web.masuk') }}</a>
             <a href="#" class="text-white hover:text-secondary group">
                 <img src="{{ asset('front/images/search-icon.svg') }}" alt="Search"
                     class="h-6 w-6 transition-transform transform group-hover:scale-120">
@@ -35,9 +36,11 @@
 </header>
 
 <nav id="mobile-menu" class="mobile-menu hidden flex-col items-center space-y-8 lg:hidden">
+    @include('partials.pengalih-bahasa')
     <ul class="w-full">
-        <li><a href="{{ route('home') }}" class="hover:text-secondary font-bold block py-2">Home</a></li>
-        <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block py-2">Produk</a></li>
-        <li><a href="{{ route('kontak') }}" class="hover:text-secondary font-bold block py-2">Kontak</a></li>
+        <li><a href="{{ route('home') }}" class="hover:text-secondary font-semibold">{{ __('web.beranda') }}</a></li>
+<li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-semibold">{{ __('web.produk') }}</a></li>
+<li><a href="{{ route('kontak') }}" class="hover:text-secondary font-semibold">{{ __('web.kontak') }}</a></li>
     </ul>
+
 </nav>

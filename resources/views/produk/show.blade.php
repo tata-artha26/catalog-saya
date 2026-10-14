@@ -26,13 +26,11 @@
                     <!-- Image Section -->
                     <div class="w-full lg:w-1/2">
                         <div class="grid gap-4">
-                            <!-- Big Image -->
+                             <!-- Big Image -->
                             <div id="main-image-container">
-                              @if ($produk->gambar)
-                <img src="{{ asset('storage/' . $produk->gambar) }}"
-                     alt="{{ $produk->nama_produk }}"
-                     class="w-full object-cover mb-4 rounded-lg">
-            @endif
+                                <img id="main-image"
+                                    class="h-auto w-full max-w-full rounded-lg object-cover object-center md:h-[480px]"
+                                    src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama_produk }}" />
                             </div>
                             <!-- Small Images -->
                             <div class="grid grid-cols-4 gap-4">
@@ -55,10 +53,10 @@
                                 <a href="#" class="ml-4 text-primary font-semibold">Write a review</a>
                             </div>
                             <div class="mb-4 pb-4 border-b border-gray-line">
-                                <p class="mb-2">Kategori : <strong>{{ $produk->kategori->nama_kategori }}</strong>
+                                <p class="mb-2">{{ __('web.kategori') }} : <strong>{{ $produk->kategori->nama_kategori }}</strong>
                                 </p>
-                                <p class="mb-2">Product code: <strong>{{ $produk->kode_produk }}</strong></p>
-                                <p class="mb-2">Availability: <strong>{{ $produk->status }}</strong></p>
+                                <p class="mb-2">{{ __('web.kode_produk') }}: <strong>{{ $produk->kode_produk }}</strong></p>
+                                <p class="mb-2">{{ __('web.stok') }}: <strong>{{ $produk->stok }}</strong></p>
                             </div>
                             <div class="text-2xl font-semibold mb-8">
                                 <span class="text-lg font-bold text-primary">{{ $produk->hargaRupiah() }}</span>
@@ -77,8 +75,7 @@
                                     class="bg-primary hover:bg-transparent border border-transparent hover:border-primary text-white hover:text-primary font-semibold  w-10 h-10 rounded-full focus:outline-none">+</button>
                             </div>
                             <button
-                                class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full">Add
-                                to Cart</button>
+                                class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full">{{ __('web.tambah_keranjang') }}</button>
                         </div>
                         <!-- Social sharing -->
                         <div class="flex space-x-4 my-6">
@@ -105,7 +102,7 @@
                         </div>
                         <!-- Additional Information -->
                         <div>
-                            <h3 class="text-lg font-semibold mb-2">Product Description</h3>
+                            <h3 class="text-lg font-semibold mb-2">{{ __('web.deskripsi_produk') }}</h3>
                             <p>{{ $produk['deskripsi'] }}</p>
                         </div>
                     </div>

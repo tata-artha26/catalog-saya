@@ -100,7 +100,7 @@
     <!-- Popular product section -->
     <section id="popular-products">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-8">Popular products</h2>
+            <h2 class="text-2xl font-bold mb-8">{{ __('web.produk_populer') }}</h2>
             <div class="flex flex-wrap -mx-4">
                 @foreach ($produkPopuler as $produk)
                 <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
@@ -122,8 +122,7 @@
                 @endif
                     </div>
                      <a href="#"
-                                class="block text-center bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</a>
+                                class="block text-center bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">{{__('web.tambah_keranjang')}}</a>
                   </div>
 
                 </div>
