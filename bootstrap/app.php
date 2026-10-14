@@ -15,6 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
             $middleware->alias([
         'admin' => \App\Http\Middleware\PastikanAdmin::class,
     ]);
+     $middleware->web(append: [
+        \App\Http\Middleware\SetBahasa::class,
+    ]);
+
+    $middleware->redirectGuestsTo(fn () => route('back_office.login'));
 
     // Tamu yang mencoba masuk area terkunci diantar ke login back office
     $middleware->redirectGuestsTo(fn () => route('back_office.login'));
