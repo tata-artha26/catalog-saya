@@ -32,6 +32,17 @@
                     class="h-6 w-6 transition-transform transform group-hover:scale-120">
             </a>
         </div>
+         <div class="relative group cart-wrapper">
+                 @if ($jumlahKeranjang > 0)
+                     <span class="bg-primary text-white text-xs font-bold rounded-full px-2 py-1 ml-1">
+                         {{ $jumlahKeranjang }}
+                     </span>
+                 @endif
+                 <a href="{{ route('keranjang.index') }}">
+                     <img src="{{ asset('front/images/cart-shopping.svg') }}" alt="Cart"
+                         class="h-6 w-6 group-hover:scale-120">
+                 </a>
+         </div>
     </div>
 </header>
 
