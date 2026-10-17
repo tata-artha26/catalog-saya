@@ -53,4 +53,23 @@ return [
     'hak_cipta'      => 'Seluruh hak cipta dilindungi.',
     'subjek'        => 'Subjek',
 
+       // ---------- Keranjang belanja ----------
+    'keranjang_belanja'  => 'Keranjang Belanja',
+    'jumlah'             => 'Jumlah',
+    'masuk_keranjang'    => 'Masuk Keranjang',
+    'stok_habis'         => 'Stok Habis',
+    'subtotal'           => 'Subtotal',
+    'total'              => 'Total',
+    'total_item'         => 'Total Item',
+    'hapus'              => 'Hapus',
+    'perbarui'           => 'Perbarui',
+    'lanjut_belanja'     => 'Lanjut Belanja',
+    'lanjut_checkout'    => 'Lanjut ke Checkout',
+    'kosongkan'          => 'Kosongkan Keranjang',
+    'ringkasan'          => 'Ringkasan Belanja',
+    'keranjang_kosong'   => 'Keranjang Anda masih kosong.',
+    'silakan_pilih'      => 'Silakan pilih produk terlebih dahulu.',
+    'mulai_belanja'      => 'Mulai Belanja',
+    'produk_di_keranjang' => ':jumlah produk di keranjang',
+    'ongkir_nanti'       => 'Ongkos kirim dihitung di halaman berikutnya.',
 ];
