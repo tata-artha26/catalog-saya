@@ -10,6 +10,8 @@ use App\Http\Controllers\BackOffice\KategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BahasaController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\BackOffice\PesananController;
 
 
 Route::get('/', [HalamanController::class, 'home'])->name('home');
@@ -30,6 +32,16 @@ Route::controller(KeranjangController::class)->prefix('keranjang')->name('keranj
     Route::delete('/',                 'kosongkan')->name('kosongkan');
 
 });
+
+Route::controller(CheckoutController::class)->prefix('checkout')->name('checkout.')->group(function () {
+    Route::get('/',        'index')->name('index');
+    Route::post('/',       'proses')->name('proses');
+    Route::get('/selesai/{pesanan:kode_pesanan}', 'selesai')->name('selesai');
+});
+
+Route::get('/pesanan',                  [PesananController::class, 'index'])->name('pesanan.index');
+Route::get('/pesanan/{pesanan}',        [PesananController::class, 'show'])->name('pesanan.show');
+Route::patch('/pesanan/{pesanan}/status', [PesananController::class, 'ubahStatus'])->name('pesanan.status');
 
 Route::prefix('back-office')->name('back_office.')->group(function () {
 
