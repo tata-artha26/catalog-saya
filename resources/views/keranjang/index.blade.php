@@ -128,7 +128,7 @@
                     </div>
 
                     {{-- Halaman tujuannya dibuat di Pertemuan 7 --}}
-                    <a href="#"
+                    <a href="{{ route('checkout.index') }}"
                        class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full block text-center">
                         {{ __('web.lanjut_checkout') }}
                     </a>
