@@ -35,13 +35,14 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon bi bi-receipt"></i>
-                        <p>Pesanan</p>
-                    </a>
-                </li>
 
+<li class="nav-item">
+    <a href="{{ route('pesanan.index') }}"
+       class="nav-link {{ request()->routeIs('back_office.pesanan.*') ? 'active' : '' }}">
+        <i class="nav-icon bi bi-receipt"></i>
+        <p>Pesanan</p>
+    </a>
+</li>
             </ul>
         </nav>
     </div>
